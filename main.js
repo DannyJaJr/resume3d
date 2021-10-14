@@ -61,9 +61,21 @@ function addStart(){
 }
 Array(200).fill().forEach(addStart)
 
+// add an avatar
+const danTexture = new THREE.TextureLoader().load('dan.png');
+const dan = new THREE.Mesh(
+  new THREE.BoxGeometry(3,3,3),
+  new THREE.MeshBasicMaterial( {map: danTexture})
+);
+scene.add(dan);
+
 // create a background
 const spaceTexture = new THREE.TextureLoader().load('space.jpg');
 scene.background = spaceTexture;
+
+
+
+
 
 // function to renderer.render(scene, camera);
 function animate(){
