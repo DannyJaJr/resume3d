@@ -30,7 +30,10 @@ scene.add(torus)
 // create a light directon
 const pointLight =  new THREE.PointLight(0xffffff)
 pointLight.position.set(5,5,5)
-scene.add(pointLight)
+
+
+const ambientLight = new THREE.AmbientLight(0xffffff);
+scene.add(pointLight, ambientLight)
 
 // function to renderer.render(scene, camera);
 function animate(){
