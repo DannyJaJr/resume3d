@@ -69,6 +69,22 @@ const dan = new THREE.Mesh(
 );
 scene.add(dan);
 
+
+// create an moon
+const moonTexture = new THREE.TextureLoader().load('moon.jpg')
+
+const moon = new THREE.Mesh(
+  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.MeshBasicMaterial({
+    map: moonTexture,
+    // normalMap: normalTexture
+    
+  })
+);
+scene.add(moon);
+moon.position.z = 30;
+moon.position.setX(-10);
+
 // create a background
 const spaceTexture = new THREE.TextureLoader().load('space.jpg');
 scene.background = spaceTexture;
